@@ -1,3 +1,8 @@
 {
-    "git.postCommitCommand": "push"
+    "git.postCommitCommand": "push",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
