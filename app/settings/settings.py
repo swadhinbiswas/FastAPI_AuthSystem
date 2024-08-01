@@ -6,7 +6,7 @@ from decouple import config
 class Settings:
     DATABASENAE:Optional[str]=config('DATABASENAME')
     DATABASEURL:Optional[str]= config('MONGODBURL')
-    DATABASEURL:Optional[str]=config('DATABASEURL')
+    DATABASEPASSWORD:Optional[str]=config('MONGODBPASSWORD')
     DATABASEUSER:Optional[str]=config('DATABSEUSER')
     PATHOFAPP:Optional[str]=config('PATHOFAPP')
 
