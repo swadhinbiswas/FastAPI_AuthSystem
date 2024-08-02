@@ -1,6 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from contextlib import asynccontextmanager
 from app.settings import setting
+from typing import Dict
 
 
 
@@ -36,7 +37,24 @@ class MONGODATABASE:
 
    async def shutdown_db_client(app):
       app.mongodb_client.close()
+   async def save_to_mongodb(key:Dict|str):
+      app.mongodb["_DATABASENAME"].insert_one(key)
+   async def revokekey(key:str):
+      x_key=app.mongodb["_DATABASENAME"].find_one(key)
+      app.mongodb["_DATABASENAME"].delete_one(x_key)
+   
+   
       
+
+
+      
+
+
+
+
+
+    
+
 
 
 
