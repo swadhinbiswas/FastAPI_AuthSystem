@@ -96,6 +96,7 @@ class JwtFunction:
       
     async def get_current_active_user(self,current_user:Annotated[str,Depends(get_current_user)])->User:
         user=User.find_data({"username":current_user})#Need to implement this method Again With Real Database code
+        """ Have to update with regular Database And It will contain multiple database """
         if user is None:
             raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,detail="User not found")
         return user
